@@ -17,6 +17,10 @@ namespace Eye_Trainer.ViewModels
     {
         #region Fields
 
+        private double m_PointWidth;
+
+        private double m_PointHeight;
+
         private SolidColorBrush m_backColor;
 
         private SolidColorBrush m_Pointcolor;
@@ -28,6 +32,20 @@ namespace Eye_Trainer.ViewModels
         #endregion
 
         #region Properties
+
+        public double PointWidth 
+        {
+            get=> m_PointWidth;
+
+            set { m_PointWidth = value; OnPropertyChanged(nameof(PointWidth)); }
+        }
+
+        public double PointHeight
+        {
+            get => m_PointHeight;
+
+            set { m_PointHeight = value; OnPropertyChanged(nameof(PointHeight)); }
+        }
 
         public SolidColorBrush BackColor 
         {

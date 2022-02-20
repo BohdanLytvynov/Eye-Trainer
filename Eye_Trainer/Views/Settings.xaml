@@ -53,6 +53,12 @@
                            Margin="20.4,9.8,20.4,10.2" Command="{Binding OnOpenClolorSelectorPointPressed}"/>
             <Rectangle Grid.Row="3" Grid.Column="3" Fill="{Binding BackColor, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="328.4,1,0,0"/>
             <Rectangle Grid.Row="5" Grid.Column="3" Fill="{Binding PointColor, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="328.4,0.8,0,0.2"/>
+            <TextBlock Grid.Row="7" Grid.Column="1" Text="Point Width:" Foreground="White"/>
+            <Slider x:Name="wP" Grid.Row="7" Grid.Column="3" Minimum="10" Maximum="60" Interval="1"/>
+            <Slider x:Name="hP" Grid.Row="9" Grid.Column="3" Minimum="10" Maximum="60" Interval="1"/>
+            <TextBlock Grid.Row="9" Grid.Column="1" Text="Point Width:" Foreground="White"/>
+            <TextBlock Grid.Row="7" Grid.Column="4" Text="{Binding ElementName=wP, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="White"/>
+            <TextBlock Grid.Row="9" Grid.Column="4" Text="{Binding ElementName=hP, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="White"/>
         </Grid>
     </Grid>
 </Page>

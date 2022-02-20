@@ -9,6 +9,10 @@ namespace Eye_Trainer.Settings
 {
     public static class Configuration
     {
+        public static double PWidth { get; set; }
+
+        public static double PHeight { get; set; }
+
         public static int Ex_Count { get; set; }
 
         public static Color BackGroundColor { get; set; }
