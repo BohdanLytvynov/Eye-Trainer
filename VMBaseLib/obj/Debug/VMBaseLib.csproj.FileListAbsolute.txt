@@ -1,0 +1,5 @@
+D:\C# Projects\Eye_Trainer\VMBaseLib\bin\Debug\VMBaseLib.dll
+D:\C# Projects\Eye_Trainer\VMBaseLib\bin\Debug\VMBaseLib.pdb
+D:\C# Projects\Eye_Trainer\VMBaseLib\obj\Debug\VMBaseLib.csproj.CoreCompileInputs.cache
+D:\C# Projects\Eye_Trainer\VMBaseLib\obj\Debug\VMBaseLib.dll
+D:\C# Projects\Eye_Trainer\VMBaseLib\obj\Debug\VMBaseLib.pdb

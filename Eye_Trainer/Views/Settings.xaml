@@ -1,0 +1,58 @@
+﻿<Page x:Class="Eye_Trainer.Views.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:Eye_Trainer.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Settings">
+    <Page.DataContext>
+        <vm:SettingsVM/>
+    </Page.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Settings" HorizontalAlignment="Stretch" TextAlignment="Center"
+                   FontSize="20" Background="White"/>
+        <Grid Grid.Row="1" x:Name="_Settings">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="24.8"/>
+                <ColumnDefinition Width="190.4"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="328.8"/>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="76*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="1" Text="Count of Iterations:" FontSize="20" Foreground="White" Grid.ColumnSpan="2" Margin="0.2,47,29.6,1.2" Grid.RowSpan="2"/>
+            <Slider Grid.Column="3" VerticalAlignment="Stretch" x:Name="count" 
+                    Interval="1" Minimum="2" Maximum="100" Value="{Binding Count, UpdateSourceTrigger=PropertyChanged,
+                Mode=TwoWay}" Margin="0.4,47,0.4,1.2" Grid.RowSpan="2"/>
+            <TextBlock Text="{Binding ElementName=count, Path=Value, UpdateSourceTrigger=PropertyChanged}" Grid.Column="4" FontSize="20" Margin="19.6,47,0,1.2" Foreground="White" Grid.RowSpan="2"/>
+            <TextBlock Text="BackGround Color:" Grid.Row="3" Grid.Column="1" FontSize="20" Foreground="White" Grid.ColumnSpan="2" Margin="0.2,1,29.6,2"/>
+            <Button x:Name="BackColorBt" Grid.Row="3" Grid.Column="3" Content="Open Color Selector"
+                          Margin="20.4,10" Command="{Binding OnOpenClolorSelectorPressed}"/>
+            <TextBlock Text="Point Color:" Grid.Row="5" Grid.Column="1" FontSize="20" Foreground="White" Grid.ColumnSpan="2" Margin="0.2,0.8,29.6,0.2"/>
+
+            <Button x:Name="PointColorBt" Grid.Row="5" Grid.Column="3" Content="Open Color Selector"
+                           Margin="20.4,9.8,20.4,10.2" Command="{Binding OnOpenClolorSelectorPointPressed}"/>
+            <Rectangle Grid.Row="3" Grid.Column="3" Fill="{Binding BackColor, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="328.4,1,0,0"/>
+            <Rectangle Grid.Row="5" Grid.Column="3" Fill="{Binding PointColor, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="328.4,0.8,0,0.2"/>
+        </Grid>
+    </Grid>
+</Page>

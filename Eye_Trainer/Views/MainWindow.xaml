@@ -1,0 +1,34 @@
+﻿<Window x:Class="Eye_Trainer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Eye_Trainer.ViewModels"
+        mc:Ignorable="d"
+        Title="Eye_Trainer" Height="450" Width="800" Background="{x:Null}">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition/>
+            <RowDefinition Height="3"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="ToolBar"  Grid.RowSpan="2" Margin="0,0,-0.4,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="267*"/>
+            </Grid.ColumnDefinitions>
+           <ToggleButton Content="Settings" IsChecked="{Binding IsSettingsOpen, UpdateSourceTrigger=PropertyChanged}"/>
+            <ToggleButton Grid.Column="2" Content="Eye Trainer" IsChecked="{Binding IsTrainerOpened, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Rectangle Grid.Row="1"/>
+        <Rectangle Grid.Row="3"/>
+        <Frame x:Name="Main" Grid.Row="2" Content="{Binding FrameObject, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
